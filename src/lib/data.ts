@@ -28,10 +28,6 @@ export const studio = {
     "Align your body, mind & soul — mindful Pilates, spa rituals, and wellness sessions built for balance, strength, and calm.",
   homeLocationLabel: "One Sky Building · Lalitpur",
   heroImage: "/images/hero-home.jpg",
-  /** Full logo — footers & large placements */
-  logoImage: "/images/align-logo.jpg",
-  /** Icon mark only — header & favicon source */
-  logoMarkImage: "/images/align-logo-mark.png",
 };
 
 export const navLinks = [

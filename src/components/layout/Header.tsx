@@ -5,10 +5,34 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { homeNavLinks } from "@/lib/data";
-import { StudioLogo } from "@/components/layout/StudioLogo";
+import { homeNavLinks, studio } from "@/lib/data";
 
 const MENU_ID = "mobile-nav-menu";
+
+function StudioLogo({ light }: { light: boolean }) {
+  return (
+    <Link href="/" className="group flex shrink-0 items-baseline gap-1.5 leading-none">
+      <span
+        className={`font-serif text-base transition-colors sm:text-lg ${
+          light
+            ? "text-cream/90 group-hover:text-cream"
+            : "text-charcoal/80 group-hover:text-charcoal"
+        }`}
+      >
+        {studio.logoLead}
+      </span>
+      <span
+        className={`font-serif text-[2rem] font-medium tracking-tight transition-colors sm:text-[2.35rem] ${
+          light
+            ? "text-cream group-hover:text-cream/95"
+            : "text-charcoal group-hover:text-espresso"
+        }`}
+      >
+        {studio.logoMark}
+      </span>
+    </Link>
+  );
+}
 
 export function Header() {
   const [open, setOpen] = useState(false);
@@ -78,7 +102,7 @@ export function Header() {
         }`}
       >
         <div className="mx-auto flex w-full max-w-[100%] items-center justify-between px-6 py-4 md:px-10 lg:px-14">
-          <StudioLogo onHero={lightHeader} />
+          <StudioLogo light={lightHeader} />
 
           <nav
             className="hidden items-center gap-5 md:flex lg:gap-8"

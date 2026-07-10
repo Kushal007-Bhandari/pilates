@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { StudioLogo } from "@/components/layout/StudioLogo";
 import { studio } from "@/lib/data";
 
 export function HomeLandingFooter() {
@@ -45,8 +44,23 @@ export function HomeLandingFooter() {
             </p>
           </div>
 
-          <div className="order-1 flex justify-center md:order-2">
-            <StudioLogo variant="footer" />
+          <div className="order-1 text-center md:order-2">
+            <Link
+              href="/"
+              className="group inline-flex flex-col items-center focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal/20 focus-visible:ring-offset-2"
+            >
+              <span className="flex items-baseline gap-1.5 leading-none">
+                <span className="font-serif text-base text-charcoal/80 transition-colors group-hover:text-charcoal">
+                  {studio.logoLead}
+                </span>
+                <span className="font-serif text-4xl font-medium tracking-tight text-charcoal transition-colors group-hover:text-espresso md:text-[2.75rem]">
+                  {studio.logoMark}
+                </span>
+              </span>
+              <span className="mt-1.5 text-[11px] uppercase tracking-[0.28em] text-charcoal/50">
+                {studio.tagline}
+              </span>
+            </Link>
           </div>
 
           <div className="order-3 flex flex-col gap-6 sm:flex-row sm:justify-end md:gap-14">
