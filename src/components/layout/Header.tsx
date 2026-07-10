@@ -5,25 +5,40 @@ import { usePathname } from "next/navigation";
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
-import { navLinks, studio } from "@/lib/data";
-import { Button } from "@/components/ui/Button";
+import { homeNavLinks } from "@/lib/data";
+import { StudioLogo } from "@/components/layout/StudioLogo";
 
 const MENU_ID = "mobile-nav-menu";
 
 export function Header() {
   const [open, setOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [pastHomeHero, setPastHomeHero] = useState(false);
   const pathname = usePathname();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const menuRef = useRef<HTMLElement>(null);
 
+  const isHome = pathname === "/";
+  const lightHeader = isHome && !pastHomeHero && !open;
+
   const closeMenu = useCallback(() => setOpen(false), []);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 20);
-    window.addEventListener("scroll", onScroll, { passive: true });
-    return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+    if (!isHome) {
+      setPastHomeHero(false);
+      return;
+    }
+
+    const hero = document.querySelector("[data-page-hero]");
+    if (!hero) return;
+
+    const observer = new IntersectionObserver(
+      ([entry]) => setPastHomeHero(!entry.isIntersecting),
+      { threshold: 0, rootMargin: "-20% 0px 0px 0px" }
+    );
+
+    observer.observe(hero);
+    return () => observer.disconnect();
+  }, [isHome, pathname]);
 
   useEffect(() => {
     closeMenu();
@@ -58,46 +73,35 @@ export function Header() {
   return (
     <>
       <header
-        className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${
-          scrolled || pathname !== "/"
-            ? "bg-cream/90 backdrop-blur-md shadow-sm"
-            : "bg-cream/85 backdrop-blur-md lg:bg-cream/70"
+        className={`fixed inset-x-0 top-0 z-50 transition-colors duration-500 ${
+          lightHeader ? "bg-transparent" : "bg-cream/90 shadow-sm backdrop-blur-md"
         }`}
       >
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-5 py-4 md:px-8">
-          <Link href="/" className="group flex flex-col">
-            <span className="font-serif text-2xl tracking-wide text-charcoal transition-colors group-hover:text-espresso">
-              {studio.name}
-            </span>
-            <span className="text-[10px] uppercase tracking-[0.25em] text-stone">
-              {studio.tagline}
-            </span>
-          </Link>
+        <div className="mx-auto flex w-full max-w-[100%] items-center justify-between px-6 py-4 md:px-10 lg:px-14">
+          <StudioLogo onHero={lightHeader} />
 
           <nav
-            className="hidden items-center gap-5 xl:gap-7 lg:flex"
+            className="hidden items-center gap-5 md:flex lg:gap-8"
             aria-label="Main"
           >
-            {navLinks.slice(1).map((link) => (
+            {homeNavLinks.map((link) => (
               <Link
                 key={link.href}
                 href={link.href}
-                className={`text-sm transition-colors hover:text-espresso focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal/20 focus-visible:ring-offset-2 ${
-                  pathname === link.href
-                    ? "font-medium text-charcoal"
-                    : "text-charcoal/60"
+                className={`whitespace-nowrap text-[10px] font-normal uppercase tracking-[0.2em] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 sm:text-[11px] sm:tracking-[0.22em] ${
+                  lightHeader
+                    ? pathname === link.href
+                      ? "text-cream focus-visible:ring-cream/40 focus-visible:ring-offset-transparent"
+                      : "text-cream/85 hover:text-cream focus-visible:ring-cream/40 focus-visible:ring-offset-transparent"
+                    : pathname === link.href
+                      ? "text-charcoal focus-visible:ring-charcoal/20"
+                      : "text-charcoal/65 hover:text-charcoal focus-visible:ring-charcoal/20"
                 }`}
               >
                 {link.label}
               </Link>
             ))}
           </nav>
-
-          <div className="hidden md:block">
-            <Button href="/book" variant="primary" className="!py-2.5 !px-5 text-xs">
-              Book a Class
-            </Button>
-          </div>
 
           <button
             ref={menuButtonRef}
@@ -106,7 +110,11 @@ export function Header() {
             aria-expanded={open}
             aria-controls={MENU_ID}
             onClick={() => setOpen(!open)}
-            className="flex min-h-11 min-w-11 items-center justify-center rounded-full p-2 text-charcoal transition-colors hover:bg-sand/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-charcoal/25 lg:hidden"
+            className={`flex min-h-11 min-w-11 items-center justify-center rounded-full p-2 transition-colors focus-visible:outline-none focus-visible:ring-2 md:hidden ${
+              lightHeader
+                ? "text-cream hover:bg-cream/10 focus-visible:ring-cream/40"
+                : "text-charcoal hover:bg-sand/50 focus-visible:ring-charcoal/25"
+            }`}
           >
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>
@@ -119,7 +127,7 @@ export function Header() {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-x-0 bottom-0 top-[var(--site-header-height)] z-40 bg-cream lg:hidden"
+            className="fixed inset-x-0 bottom-0 top-[var(--site-header-height)] z-40 bg-cream md:hidden"
           >
             <nav
               id={MENU_ID}
@@ -127,7 +135,7 @@ export function Header() {
               aria-label="Mobile"
               className="flex h-full flex-col gap-5 overflow-y-auto overscroll-y-contain px-8 pb-10 pt-6 [-webkit-overflow-scrolling:touch]"
             >
-              {navLinks.map((link) => (
+              {homeNavLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
@@ -139,9 +147,6 @@ export function Header() {
                   {link.label}
                 </Link>
               ))}
-              <Button href="/book" className="mt-2 w-full max-w-xs shrink-0">
-                Book a Class
-              </Button>
             </nav>
           </motion.div>
         )}

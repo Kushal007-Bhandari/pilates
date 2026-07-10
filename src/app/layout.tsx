@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, DM_Sans } from "next/font/google";
 import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
+import { ConditionalFooter } from "@/components/layout/ConditionalFooter";
 import { StickyBookCTA } from "@/components/layout/StickyBookCTA";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { studio } from "@/lib/data";
@@ -26,14 +26,15 @@ const dmSans = DM_Sans({
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: `${studio.fullName} | Bhaisepati, Lalitpur`,
+    default: `${studio.fullName} | Pulchowk, Lalitpur`,
     template: `%s | ${studio.name}`,
   },
   description: studio.metaDescription,
   keywords: [
     "pilates lalitpur",
-    "reformer pilates bhaisepati",
-    "studio n8 pilates",
+    "align pilates pulchowk",
+    "wellness center lalitpur",
+    "a-fit studios onesky",
     "pilates nepal",
     "wellness lalitpur",
   ],
@@ -82,7 +83,7 @@ export default function RootLayout({
         >
           {children}
         </main>
-        <Footer />
+        <ConditionalFooter />
         <StickyBookCTA />
       </body>
     </html>

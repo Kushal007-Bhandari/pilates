@@ -1,25 +1,17 @@
 import { Hero } from "@/components/home/Hero";
-import { BeginnerBanner } from "@/components/home/BeginnerBanner";
-import { ExperienceSection } from "@/components/home/ExperienceSection";
-import { ClassesPreview } from "@/components/home/ClassesPreview";
-import { TestimonialsPreview } from "@/components/home/TestimonialsPreview";
-import { CTASection } from "@/components/home/CTASection";
+import { HomeLandingFooter } from "@/components/home/HomeLandingFooter";
 
 export const metadata = {
-  title: "Pilates & Wellness in Bhaisepati",
+  title: "Pilates & Wellness in Pulchowk",
   description:
-    "Studio N°8 — reformer Pilates, Cadillac, Wunda Chair & TRX in Lalitpur. Certified instructors, tailored 60-minute sessions. Book via WhatsApp.",
+    "Align Pilates & Wellness Studio — Pilates, spa, yoga & barre at A-Fit Studios, One Sky Building, Lalitpur. Book via WhatsApp.",
 };
 
 export default function HomePage() {
   return (
-    <>
+    <div data-home-page className="min-h-[100svh]">
       <Hero />
-      <BeginnerBanner />
-      <ExperienceSection />
-      <ClassesPreview />
-      <TestimonialsPreview />
-      <CTASection />
-    </>
+      <HomeLandingFooter />
+    </div>
   );
 }

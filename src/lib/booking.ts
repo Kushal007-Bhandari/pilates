@@ -9,13 +9,16 @@ export function buildBookingWhatsAppUrl(
     notes?: string;
     planName?: string;
     classInterest?: string;
+    qty?: number;
   }
 ): string {
   const lines = [
     `Hi ${studio.name}, I'd like to book a class.`,
     "",
     slot
-      ? `Session: ${slot.className}\nDay: ${slot.day}\nTime: ${slot.time}`
+      ? `Session: ${slot.className}\nDay: ${slot.day}\nTime: ${slot.time}${
+          details?.qty && details.qty > 1 ? `\nSpots: ${details.qty}` : ""
+        }`
       : details?.planName
         ? `Membership interest: ${details.planName}`
         : details?.classInterest

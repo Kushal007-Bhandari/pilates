@@ -7,11 +7,11 @@ import { studio } from "@/lib/data";
 export const metadata = {
   title: "Contact",
   description:
-    "Visit Studio N°8 in Bhaisepati, Lalitpur — WhatsApp, phone, email, and directions.",
+    "Visit Align Pilates & Wellness at One Sky Building, Pulchowk — WhatsApp, phone, and directions.",
 };
 
 const mapsEmbedSrc = `https://maps.google.com/maps?q=${encodeURIComponent(
-  "Studio N8 Bhaisepati Awas Gate Lalitpur Nepal"
+  "A-Fit Studios One Sky Building Pulchowk Lalitpur Nepal"
 )}&z=15&output=embed`;
 
 export default function ContactPage() {
@@ -20,7 +20,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="We'd love to hear from you"
-        description="Visit us in Bhaisepati, message on WhatsApp, or send a note — we'll respond as soon as we can."
+        description="Visit us at One Sky Building, message on WhatsApp, or send a note — we'll respond as soon as we can."
       />
 
       <section className="py-20 md:py-28">
@@ -88,7 +88,7 @@ export default function ContactPage() {
 
               <div className="overflow-hidden rounded-2xl border border-sand">
                 <iframe
-                  title="Studio N°8 on Google Maps"
+                  title="Align Pilates on Google Maps"
                   src={mapsEmbedSrc}
                   className="h-64 w-full border-0 md:h-72"
                   loading="lazy"

@@ -10,7 +10,7 @@ export default function NotFound() {
       </h1>
       <p className="mt-4 max-w-md text-sm text-charcoal/60">
         The link may be outdated. Head home or book a session — we&apos;re here
-        Sun–Fri in Bhaisepati.
+        Sun–Fri at One Sky Building, Pulchowk.
       </p>
       <div className="mt-10 flex flex-wrap justify-center gap-4">
         <Button href="/">Back to home</Button>

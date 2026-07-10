@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 export const metadata = {
   title: "Trainers",
   description:
-    "Meet Shalu, Samuyal, and Rohan — certified Pilates instructors at Studio N°8, Lalitpur.",
+    "Meet Anjali, Maya, and Sara — Pilates, yoga, and wellness instructors at Align, Lalitpur.",
 };
 
 export default function TrainersPage() {
@@ -14,7 +14,7 @@ export default function TrainersPage() {
     <>
       <PageHero
         eyebrow="Instructors"
-        title="Meet the Studio N°8 team"
+        title="Meet the Align team"
         description="Shalu, Samuyal, and Rohan lead every session with certified instruction, calm energy, and programs tailored to how you move."
       />
 

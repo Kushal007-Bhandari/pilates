@@ -8,7 +8,6 @@ const routes = [
   "/trainers",
   "/memberships",
   "/schedule",
-  "/gallery",
   "/testimonials",
   "/contact",
   "/book",

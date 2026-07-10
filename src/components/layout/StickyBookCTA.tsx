@@ -17,7 +17,12 @@ export function StickyBookCTA() {
     (route) => pathname === route || pathname.startsWith(`${route}/`)
   );
 
-  const visible = pastHero && !hiddenByScroll && !isBookRoute;
+  const visible =
+    pathname !== "/" &&
+    pathname !== "/schedule" &&
+    pastHero &&
+    !hiddenByScroll &&
+    !isBookRoute;
 
   // Show CTA only after the page hero scrolls out of view
   useEffect(() => {

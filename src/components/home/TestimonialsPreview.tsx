@@ -56,7 +56,7 @@ export function TestimonialsPreview() {
             rel="noopener noreferrer"
             className="text-xs text-charcoal/45 transition-colors hover:text-charcoal"
           >
-            Daily updates on @studion8pilates
+            Daily updates on @{studio.instagramHandle}
           </a>
         </motion.div>
       </div>

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 export const metadata = {
   title: "About",
   description:
-    "Studio N°8 in Bhaisepati — certified Pilates instruction, full equipment studio, programs tailored to you.",
+    "Align Pilates & Wellness at One Sky Building — certified instruction, Pilates, yoga, barre & spa.",
 };
 
 export default function AboutPage() {
@@ -24,7 +24,7 @@ export default function AboutPage() {
             <div className="relative aspect-[4/5] overflow-hidden rounded-2xl bg-sand/30">
               <Image
                 src="/images/reformer-strap.png"
-                alt="Reformer session at Studio N°8 — Bhaisepati"
+                alt="Pilates session at Align — One Sky Building, Pulchowk"
                 fill
                 className="object-cover"
                 sizes="(max-width: 1024px) 100vw, 50vw"
@@ -60,8 +60,8 @@ export default function AboutPage() {
                 text: "Reformer, Cadillac, Wunda Chair, Spine Corrector, Ladder Barrel, and TRX — rotated through the week.",
               },
               {
-                title: "Bhaisepati, Lalitpur",
-                text: "A dedicated wellness space at Awas Gate — calm, focused, and designed for results.",
+                title: "One Sky Building, Pulchowk",
+                text: "Inside A-Fit Studios at One Sky Building — a calm wellness center in the heart of Lalitpur.",
               },
             ].map((item) => (
               <article

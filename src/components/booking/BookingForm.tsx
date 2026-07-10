@@ -11,9 +11,10 @@ type Props = {
   slot?: ScheduleSlot | null;
   planName?: string | null;
   classInterest?: string | null;
+  qty?: number;
 };
 
-export function BookingForm({ slot, planName, classInterest }: Props) {
+export function BookingForm({ slot, planName, classInterest, qty = 1 }: Props) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [form, setForm] = useState({
@@ -44,6 +45,7 @@ export function BookingForm({ slot, planName, classInterest }: Props) {
       phone: form.phone.trim(),
       planName: planName ?? undefined,
       classInterest: classInterest ?? undefined,
+      qty: slot ? qty : undefined,
       notes: `Email: ${form.email.trim()}${form.notes.trim() ? ` — ${form.notes.trim()}` : ""}`,
     });
   };
@@ -65,6 +67,7 @@ export function BookingForm({ slot, planName, classInterest }: Props) {
           <p className="mt-1 font-serif text-xl text-charcoal">{slot.className}</p>
           <p className="mt-1 text-sm text-charcoal/60">
             {slot.day} · {slot.time}
+            {qty > 1 ? ` · ${qty} spots` : ""}
           </p>
         </motion.div>
       )}

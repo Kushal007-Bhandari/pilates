@@ -5,6 +5,7 @@ export function JsonLd() {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "HealthAndBeautyBusiness",
+    additionalType: "https://schema.org/WellnessCenter",
     name: studio.fullName,
     description: studio.metaDescription,
     url: siteUrl,

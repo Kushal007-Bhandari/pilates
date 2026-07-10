@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/Button";
 
 export const metadata = {
   title: "Stories",
-  description: "Community stories from Studio N°8 — reformer Pilates in Bhaisepati, Lalitpur.",
+  description: "Community stories from Align Pilates & Wellness — One Sky Building, Lalitpur.",
 };
 
 export default function TestimonialsPage() {
@@ -42,7 +42,7 @@ export default function TestimonialsPage() {
               Follow the studio on Instagram
             </p>
             <p className="mt-2 text-sm text-charcoal/60">
-              Schedules, stories, and behind-the-scenes from Bhaisepati.
+              Schedules, stories, and behind-the-scenes from Pulchowk.
             </p>
             <a
               href={studio.instagram}
@@ -50,7 +50,7 @@ export default function TestimonialsPage() {
               rel="noopener noreferrer"
               className="mt-4 inline-block text-sm font-medium text-charcoal underline-offset-4 hover:underline"
             >
-              @studion8pilates →
+              @{studio.instagramHandle} →
             </a>
           </div>
 

@@ -25,7 +25,7 @@ export function ExperienceSection() {
       <div className="mx-auto max-w-7xl px-5 md:px-8">
         <div className="grid items-center gap-16 lg:grid-cols-2">
           <SectionHeading
-            eyebrow="The Studio N°8 Experience"
+            eyebrow="The Align Experience"
             title="Equipment-rich Pilates, thoughtfully programmed"
             description="Every session uses professional apparatus — programs rotate weekly and refine monthly so your practice stays dynamic and results-driven."
           />
@@ -39,7 +39,7 @@ export function ExperienceSection() {
           >
             <Image
               src="/images/studio-curved-wall.png"
-              alt="Studio N°8 interior — reformers and N°8 branding in Bhaisepati"
+              alt="Align wellness studio interior — reformers at One Sky Building"
               fill
               className="object-cover object-center"
               sizes="(max-width: 1024px) 100vw, 50vw"

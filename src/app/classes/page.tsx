@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/Button";
 export const metadata = {
   title: "Classes",
   description:
-    "Group reformer, equipment circuit, and personal Pilates sessions at Studio N°8 — Bhaisepati, Lalitpur.",
+    "Pilates, yoga, barre, sound healing & wellness at Align — One Sky Building, Lalitpur.",
 };
 
 export default function ClassesPage() {

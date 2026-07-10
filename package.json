@@ -1,9 +1,11 @@
 {
-  "name": "studio-n8-pilates",
+  "name": "align-pilates-wellness",
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev --turbo",
+    "dev": "next dev",
+    "dev:clean": "rm -rf .next && next dev",
+    "dev:turbo": "next dev --turbo",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"

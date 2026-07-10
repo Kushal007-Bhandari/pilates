@@ -1,21 +1,37 @@
 export const studio = {
-  name: "Studio N°8",
-  tagline: "Pilates & Wellness",
-  fullName: "Studio N°8 — Pilates & Wellness",
+  name: "Align",
+  logoLead: "Align",
+  logoMark: "Pilates",
+  tagline: "Pilates • Spa • Wellness",
+  fullName: "Align Pilates & Wellness Studio",
+  parentBrand: "A-Fit Studios",
+  instagramHandle: "align.byafitstudios",
   metaDescription:
-    "Studio N°8 in Bhaisepati, Lalitpur — reformer Pilates with Cadillac, Wunda Chair, TRX & more. Certified instructors, tailored 60-minute sessions.",
-  email: "studion8wellness@gmail.com",
-  phone: "+977 9700061310",
-  phoneTel: "+9779700061310",
-  whatsapp: "https://wa.me/9779700061310",
-  instagram: "https://www.instagram.com/studion8pilates",
-  address: "Bhaisepati, Awas Gate",
-  addressLine2: "Lalitpur, Nepal",
-  hours: "Sun–Fri · Group 6–11am & 4–7pm · Private 11am–4pm",
+    "Align Pilates & Wellness Studio at A-Fit Studios, One Sky Building — Pilates, spa, yoga, barre & sound healing in Pulchowk, Lalitpur.",
+  shortDescription:
+    "Align your body, mind & soul — Pilates, spa, and wellness at A-Fit Studios, One Sky Building, Lalitpur.",
+  email: "align@byafitstudios.com",
+  phone: "+977 9705339977",
+  phoneTel: "+9779705339977",
+  whatsapp: "https://wa.me/9779705339977",
+  instagram: "https://www.instagram.com/align.byafitstudios",
+  address: "A-Fit Studios, One Sky Building",
+  addressLine2: "Pulchowk, Lalitpur, Nepal",
+  hours: "Mon–Sun · Classes & appointments — message us for today's schedule",
   mapsUrl:
-    "https://maps.google.com/?q=Studio+N8+Bhaisepati+Awas+Gate+Lalitpur+Nepal",
+    "https://maps.google.com/?q=A-Fit+Studios+One+Sky+Building+Pulchowk+Lalitpur+Nepal",
   /** Paste your Google Form booking URL here when ready */
   bookingFormUrl: "",
+  /** Homepage manifesto (727-style full-bleed hero) */
+  homeManifestoLead: "Align",
+  homeManifesto:
+    "Align your body, mind & soul — mindful Pilates, spa rituals, and wellness sessions built for balance, strength, and calm.",
+  homeLocationLabel: "One Sky Building · Lalitpur",
+  heroImage: "/images/hero-home.jpg",
+  /** Full logo — footers & large placements */
+  logoImage: "/images/align-logo.jpg",
+  /** Icon mark only — header & favicon source */
+  logoMarkImage: "/images/align-logo-mark.png",
 };
 
 export const navLinks = [
@@ -25,19 +41,28 @@ export const navLinks = [
   { href: "/trainers", label: "Trainers" },
   { href: "/memberships", label: "Memberships" },
   { href: "/schedule", label: "Schedule" },
-  { href: "/gallery", label: "Gallery" },
   { href: "/testimonials", label: "Stories" },
+  { href: "/contact", label: "Contact" },
+];
+
+/** Minimal text-only nav on homepage hero (727-style) */
+export const homeNavLinks = [
+  { href: "/about", label: "About" },
+  { href: "/classes", label: "Classes" },
+  { href: "/memberships", label: "Memberships" },
+  { href: "/book", label: "Book a Class" },
+  { href: "/schedule", label: "Schedule" },
   { href: "/contact", label: "Contact" },
 ];
 
 export const classes = [
   {
     id: "group",
-    title: "Group Session",
+    title: "Pilates",
     duration: "60 min",
     level: "All levels",
     description:
-      "A full-body Pilates workout using the Reformer, Cadillac, Wunda Chair, Spine Corrector, Ladder Barrel, and TRX — rotated thoughtfully throughout the week. Led by certified instructors.",
+      "Core fundamentals on the reformer and apparatus — mindful movement, stability, and balanced strength. Where strength meets intention.",
     image: "/images/group-reformer.png",
   },
   {
@@ -46,104 +71,130 @@ export const classes = [
     duration: "60 min",
     level: "Personalized",
     description:
-      "One-on-one attention reserved daily from 11am–4pm. Programs are tailored to your strength, stamina, fitness level, and any specific physical concerns.",
+      "One-on-one Pilates tailored to your body, goals, and experience — ideal for focused progress or beginners who want extra guidance.",
     image: "/images/cadillac-suspended.png",
   },
   {
-    id: "reformer",
-    title: "Reformer Focus",
+    id: "yoga",
+    title: "Yoga",
     duration: "60 min",
     level: "All levels",
     description:
-      "Overall reformer work, tower, plank, and cardio/jump variations — central to our weekly unlimited membership rotation.",
-    image: "/images/reformer-strap.png",
+      "Gentle flow, breathwork, and mindful movement to build strength, improve flexibility, and release tension.",
+    image: "/images/duo-mat-work.png",
   },
   {
-    id: "equipment",
-    title: "Equipment Circuit",
-    duration: "60 min",
+    id: "barre",
+    title: "Barre",
+    duration: "50 min",
     level: "All levels",
     description:
-      "Wunda Chair, Spine Corrector, TRX straps, and more — integrated into our 12-session and unlimited monthly programs.",
-    image: "/images/wunda-chairs.png",
+      "Sculpt-focused barre with precision, control, and grace — small movements that build long, strong lines and confident posture.",
+    image: "/images/lifestyle-wellness.png",
+  },
+  {
+    id: "sound",
+    title: "Sound Healing",
+    duration: "60 min",
+    level: "All welcome",
+    description:
+      "Therapeutic sound vibrations with singing bowls and gentle tones — deep rest for the nervous system, mind, and body.",
+    image: "/images/studio-skylight.png",
+  },
+  {
+    id: "wellness",
+    title: "Wellness & Spa",
+    duration: "By session",
+    level: "Personalized",
+    description:
+      "Therapeutic bodywork, myofascial release, breathwork, and meditation — intentional care to ease tension and restore balance.",
+    image: "/images/studio-curved-wall.png",
   },
 ];
 
-export const instructorNames = ["Shalu", "Samuyal", "Rohan"] as const;
+export const instructorNames = ["Anjali", "Maya", "Sara"] as const;
 
 export const trainers = [
   {
-    id: "shalu",
-    name: "Shalu",
-    role: "Certified Pilates Instructor",
-    bio: "Guides group and reformer sessions with calm precision — programs tailored to your strength, stamina, and goals.",
+    id: "anjali",
+    name: "Anjali",
+    role: "Lead Pilates Instructor",
+    bio: "Guides reformer and group Pilates with calm precision — programs tailored to strength, alignment, and mindful progress.",
     specialties: ["Reformer", "Core", "All levels"],
   },
   {
-    id: "samuyal",
-    name: "Samuyal",
-    role: "Certified Pilates Instructor",
-    bio: "Specializes in equipment circuits — Cadillac, tower, Wunda Chair, and TRX integrated into thoughtful weekly progressions.",
-    specialties: ["Equipment", "Cadillac", "Mobility"],
+    id: "maya",
+    name: "Maya",
+    role: "Yoga & Breathwork Coach",
+    bio: "Leads yoga flow and breath-led sessions that balance mobility, stillness, and nervous-system calm.",
+    specialties: ["Yoga", "Breathwork", "Flexibility"],
   },
   {
-    id: "rohan",
-    name: "Rohan",
-    role: "Certified Pilates Instructor",
-    bio: "Leads personal sessions and supports beginners with patient, one-on-one attention throughout the private hour block.",
-    specialties: ["Private sessions", "Beginners", "Posture"],
+    id: "sara",
+    name: "Sara",
+    role: "Wellness & Bodywork Specialist",
+    bio: "Supports sound healing, barre, and spa wellness sessions — focused on recovery, release, and whole-body care.",
+    specialties: ["Sound healing", "Barre", "Bodywork"],
   },
 ];
 
-export const memberships = [
+export type MembershipPlan = {
+  id: string;
+  name: string;
+  price: string;
+  period?: string;
+  description?: string;
+  highlighted?: boolean;
+};
+
+/** Group class packages (Normal Package) */
+export const groupPackages: MembershipPlan[] = [
+  { id: "group-4", name: "4 classes", price: "Rs 8,000" },
+  { id: "group-8", name: "8 classes", price: "Rs 11,500" },
+  { id: "group-10", name: "10 classes", price: "Rs 12,500" },
+  { id: "group-12", name: "12 classes", price: "Rs 13,500", highlighted: true },
+  { id: "group-16", name: "16 classes", price: "Rs 16,000" },
+  { id: "group-20", name: "20 classes", price: "Rs 18,000" },
+];
+
+/** Private session packages */
+export const privatePackages: MembershipPlan[] = [
+  { id: "private-5", name: "5 classes", price: "Rs 11,500" },
+  { id: "private-10", name: "10 classes", price: "Rs 22,000" },
   {
-    id: "twelve",
-    name: "12 Sessions Monthly",
-    price: "Contact us",
-    period: "per month",
-    description:
-      "Sunday–Friday group schedule with a rotating three-day focus across reformer and equipment.",
-    features: [
-      "Day 1 — Overall exercises on Reformer",
-      "Day 2 — Straps in hand on Reformer",
-      "Day 3 — Wunda Chair / Spine Corrector / TRX",
-      "Programs refined monthly to match your progress",
-      "Tailored to strength, stamina & fitness level",
-    ],
-    highlighted: true,
+    id: "private-dropin",
+    name: "Drop-in session",
+    price: "Rs 3,000",
+    period: "single session",
+  },
+];
+
+/** Trial & drop-in options */
+export const pricingExtras = [
+  {
+    id: "trial",
+    name: "Trial",
+    price: "Rs 1,000",
+    note: "Valid one time only",
   },
   {
-    id: "unlimited",
-    name: "Unlimited Monthly",
-    price: "Contact us",
-    period: "per month",
-    description:
-      "Sunday–Friday with a dedicated equipment focus each day of the week.",
-    features: [
-      "Sun — Reformer",
-      "Mon — Wunda Chair / TRX",
-      "Tue — Spine Corrector",
-      "Wed — Tower on Reformer",
-      "Thu — Plank on Reformer",
-      "Fri — Cardio / Jump on Reformer",
-    ],
-    highlighted: false,
+    id: "group-dropin",
+    name: "Group class drop-in",
+    price: "Rs 1,500",
+    note: "Single group class",
   },
-  {
-    id: "private",
-    name: "Personal Sessions",
-    price: "Contact us",
-    period: "by appointment",
-    description:
-      "Private sessions available daily 11am–4pm, outside of group class hours.",
-    features: [
-      "60-minute one-on-one sessions",
-      "Tailored to your body & concerns",
-      "Flexible scheduling within studio hours",
-      "Ideal for focused progress & rehab support",
-    ],
-    highlighted: false,
-  },
+] as const;
+
+/** Flat list for booking flow lookups */
+export const memberships: MembershipPlan[] = [
+  ...groupPackages,
+  ...privatePackages,
+  ...pricingExtras.map(({ id, name, price, note }) => ({
+    id,
+    name,
+    price,
+    period: note,
+  })),
 ];
 
 export type ScheduleSlot = {
@@ -152,8 +203,11 @@ export type ScheduleSlot = {
   time: string;
   className: string;
   instructor: string;
+  instructors: string[];
   spots: number;
   classId: string;
+  activityType: "group" | "private";
+  location: string;
 };
 
 const OPEN_DAYS = [
@@ -165,16 +219,18 @@ const OPEN_DAYS = [
   "Friday",
 ] as const;
 
+export { OPEN_DAYS };
+
 const dailyFocus: Record<
   (typeof OPEN_DAYS)[number],
   { className: string; classId: string }
 > = {
-  Sunday: { className: "Reformer", classId: "reformer" },
-  Monday: { className: "Wunda Chair / TRX", classId: "equipment" },
-  Tuesday: { className: "Spine Corrector", classId: "equipment" },
-  Wednesday: { className: "Tower on Reformer", classId: "reformer" },
-  Thursday: { className: "Plank on Reformer", classId: "reformer" },
-  Friday: { className: "Cardio / Jump on Reformer", classId: "reformer" },
+  Sunday: { className: "Pilates · Reformer", classId: "reformer" },
+  Monday: { className: "Yoga Flow", classId: "yoga" },
+  Tuesday: { className: "Barre", classId: "barre" },
+  Wednesday: { className: "Pilates · Equipment", classId: "equipment" },
+  Thursday: { className: "Sound Healing", classId: "sound" },
+  Friday: { className: "Wellness & Bodywork", classId: "wellness" },
 };
 
 const GROUP_MORNING = "6:00 AM – 11:00 AM";
@@ -187,6 +243,7 @@ function slug(s: string) {
 
 function buildSchedule(): ScheduleSlot[] {
   const slots: ScheduleSlot[] = [];
+  const location = `${studio.address}, ${studio.addressLine2}`;
 
   for (const day of OPEN_DAYS) {
     const focus = dailyFocus[day];
@@ -197,18 +254,24 @@ function buildSchedule(): ScheduleSlot[] {
         day,
         time: GROUP_MORNING,
         className: `Group sessions · ${focus.className}`,
-        instructor: "Shalu, Samuyal & Rohan",
+        instructor: "Anjali, Maya & Sara",
+        instructors: [...instructorNames],
         spots: 8,
         classId: focus.classId,
+        activityType: "group",
+        location,
       },
       {
         id: `${slug(day)}-group-evening`,
         day,
         time: GROUP_EVENING,
         className: `Group sessions · ${focus.className}`,
-        instructor: "Shalu, Samuyal & Rohan",
+        instructor: "Anjali, Maya & Sara",
+        instructors: [...instructorNames],
         spots: 8,
         classId: focus.classId,
+        activityType: "group",
+        location,
       },
       {
         id: `${slug(day)}-private`,
@@ -216,8 +279,11 @@ function buildSchedule(): ScheduleSlot[] {
         time: PRIVATE_WINDOW,
         className: "Personal Session",
         instructor: "By appointment",
+        instructors: [...instructorNames],
         spots: 1,
         classId: "private",
+        activityType: "private",
+        location,
       }
     );
   }
@@ -225,47 +291,46 @@ function buildSchedule(): ScheduleSlot[] {
   return slots;
 }
 
+export const scheduleActivities = [
+  { value: "all", label: "All group activities" },
+  { value: "group", label: "Group sessions" },
+  { value: "private", label: "Personal sessions" },
+  { value: "reformer", label: "Pilates" },
+  { value: "yoga", label: "Yoga" },
+  { value: "barre", label: "Barre" },
+  { value: "sound", label: "Sound healing" },
+  { value: "wellness", label: "Wellness & spa" },
+] as const;
+
+export const scheduleInstructors = [
+  { value: "all", label: "All instructors" },
+  ...instructorNames.map((name) => ({ value: name.toLowerCase(), label: name })),
+] as const;
+
 export const schedule = buildSchedule();
 
 export const testimonials = [
   {
     id: "1",
     quote:
-      "Every session feels thoughtfully planned — the equipment rotation keeps things fresh and challenging in the best way.",
+      "A beautiful wellness space at One Sky — Pilates and spa sessions that leave you aligned, calm, and stronger.",
     name: "Member",
-    detail: "Studio N°8 community",
+    detail: "Align community",
   },
   {
     id: "2",
     quote:
-      "A calm, beautiful space in Lalitpur. The instructors meet you where you are — beginners and experienced movers alike.",
+      "The mix of Pilates, yoga, and sound healing keeps every week feeling fresh. Instructors meet you where you are.",
     name: "Member",
     detail: "Group sessions",
   },
   {
     id: "3",
     quote:
-      "Follow us on Instagram @studion8pilates for stories, schedules, and updates from the studio.",
-    name: "Studio N°8",
-    detail: "@studion8pilates",
+      "Follow us on Instagram @align.byafitstudios for schedules, wellness tips, and studio updates.",
+    name: "Align",
+    detail: "@align.byafitstudios",
   },
-];
-
-export const galleryImages = [
-  { id: "1", src: "/images/studio-skylight.png", alt: "Studio N°8 — light-filled reformer studio with skylight" },
-  { id: "2", src: "/images/studio-curved-wall.png", alt: "Studio interior with N°8 branding and curved wall" },
-  { id: "3", src: "/images/group-reformer.png", alt: "Group reformer class with magic circles" },
-  { id: "4", src: "/images/reformer-strap.png", alt: "Reformer session at Studio N°8" },
-  { id: "5", src: "/images/cadillac-suspended.png", alt: "Cadillac tower work" },
-  { id: "6", src: "/images/cadillac-inverted.png", alt: "Advanced Cadillac inversion" },
-  { id: "7", src: "/images/barrel-duo-stretch.png", alt: "Ladder barrel stretch with N°8 equipment" },
-  { id: "8", src: "/images/wunda-chairs.png", alt: "Wunda chairs by the studio windows" },
-  { id: "9", src: "/images/equipment-branded.png", alt: "N°8 branded Pilates apparatus" },
-  { id: "10", src: "/images/ladder-barrel-brand.png", alt: "Ladder barrel with Studio N°8 logo" },
-  { id: "11", src: "/images/reformer-closeup.png", alt: "Reformer upholstery and wood frame detail" },
-  { id: "12", src: "/images/studio-props.png", alt: "Organized props and reformer in the studio" },
-  { id: "13", src: "/images/duo-mat-work.png", alt: "Partner mat work in the studio" },
-  { id: "14", src: "/images/lifestyle-wellness.png", alt: "Wellness moment on the reformer at Studio N°8" },
 ];
 
 export const days = [...OPEN_DAYS];
@@ -293,18 +358,18 @@ export const faqs = [
     id: "parking",
     question: "Parking & directions",
     answer:
-      "We're at Bhaisepati, Awas Gate, Lalitpur. Message us on WhatsApp if you need directions — we'll help you find the studio.",
+      "We're inside A-Fit Studios at One Sky Building, Pulchowk, Lalitpur. Message us on WhatsApp or Instagram if you need directions.",
   },
   {
     id: "pricing",
     question: "How do memberships work?",
     answer:
-      "We offer 12-session monthly, unlimited monthly, and personal sessions. Pricing is confirmed directly with the studio — contact us on WhatsApp or Instagram @studion8pilates.",
+      "Group packages start at Rs 8,000 for 4 classes. Private packages start at Rs 11,500 for 5 sessions. Trial is Rs 1,000 (one time). See full pricing on our Memberships page or message us on WhatsApp.",
   },
   {
     id: "saturday",
-    question: "Are you open on Saturday?",
-    answer: "The studio is closed on Saturdays. Group and private sessions run Sunday through Friday.",
+    question: "How do I see today's schedule?",
+    answer: "Contact us on WhatsApp or Instagram for the latest class times — schedules may vary by day.",
   },
 ];
 
@@ -317,9 +382,9 @@ export const policies = {
 
 export const studioStory = {
   intro:
-    "Studio N°8 is a Pilates & Wellness space in Bhaisepati, Lalitpur — built around precision equipment, certified instruction, and programs that evolve with you.",
+    "Align Pilates & Wellness Studio is a calm wellness center inside A-Fit Studios at One Sky Building, Pulchowk — built around Pilates, spa, and mindful movement.",
   philosophy:
-    "Exercises are thoughtfully tailored to each individual's strength, stamina, fitness level, and any specific physical concerns. Programs are refined and elevated monthly to align with your evolving progress — ensuring a dynamic, results-driven Pilates experience.",
+    "Align your body, mind & soul. Our sessions combine Pilates, yoga, barre, sound healing, and therapeutic wellness — tailored to how you feel today and where you want to grow.",
   equipment:
-    "Our sessions feature the Reformer, Cadillac, Wunda Chair, Spine Corrector, Ladder Barrel, and TRX bands, incorporated throughout the week.",
+    "Pilates reformer and apparatus sessions sit alongside yoga, barre, sound healing, and spa wellness — all under one roof at A-Fit Studios.",
 };

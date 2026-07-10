@@ -12,6 +12,7 @@ function BookContent() {
   const slotId = searchParams.get("slot");
   const planId = searchParams.get("plan");
   const classId = searchParams.get("class");
+  const qty = Math.max(1, Number(searchParams.get("qty")) || 1);
 
   const slot = useMemo(
     () => schedule.find((s) => s.id === slotId) ?? null,
@@ -65,6 +66,7 @@ function BookContent() {
             slot={slot}
             planName={planName}
             classInterest={classInterest}
+            qty={qty}
           />
         </div>
       </section>

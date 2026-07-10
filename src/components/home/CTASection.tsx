@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { studio } from "@/lib/data";
 import { Button } from "@/components/ui/Button";
 
 export function CTASection() {
@@ -25,7 +26,7 @@ export function CTASection() {
               Your first session is the start of feeling at home in your body
             </h2>
             <p className="mx-auto mt-4 max-w-md text-sm text-cream/60">
-              Memberships & pricing — message us on WhatsApp or Instagram @studion8pilates.
+              Memberships & pricing — message us on WhatsApp or Instagram @{studio.instagramHandle}.
             </p>
             <div className="mt-10 flex flex-wrap justify-center gap-4">
               <Button href="/book" variant="secondary">
